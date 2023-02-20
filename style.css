@@ -75,6 +75,7 @@ body{
 .search-icon{
     margin-left: 8px;
     /* background-color: red; */
+    cursor: pointer;
     color: #A543EE;
 }
 
@@ -190,7 +191,7 @@ body{
     
 }
 .source-wrap{
-    width: 90%;
+    width: 100%;
     text-align: left;
     display: flex;
     font-size: 0.7rem;
