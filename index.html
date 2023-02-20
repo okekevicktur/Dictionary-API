@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor | Dictionary API</title>
+   
+    <script src="https://kit.fontawesome.com/33a7dca87f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div><i class="fa-solid fa-wallet"></i>
+            </div>
+            <div class="settings-wrap">
+                <div class="serif-wrap">
+                    <span class="serif">Serif</span><i class="fa-solid fa-circle-chevron-down"></i>
+                </div>  
+                <!-- <div class="stroke"></div> -->
+                <div class="settings">
+                    <i class="fa-solid fa-toggle-off light"></i>
+                    <i class="fa-solid fa-toggle-on dark"></i>
+                    <i class="fa-solid fa-moon dark"></i>
+                    <i class="fa-regular fa-moon light"></i>
+                </div>   
+            </div>
+        </header>
+        <div class="search">
+            <input type="search" name="" id="search" placeholder="search word">
+            <span> <i class="fa-solid fa-magnifying-glass search-icon"></i></span>
+            
+        </div>
+
+        <div class="main">
+            <div class="main-header">
+                <div class="syllabus">
+                    <p class="word">keyboard</p>
+                    <span class="transcription">/ki:bc:d/</span>
+                </div>
+                <div class="play-wrap">
+                   <span class="play"><i class="fa-solid fa-play "></i></span> 
+                </div>
+            </div>
+           
+            <!-- part of speech -->
+            <div class="speech-container">
+                <p id="speech-type">noun</p>
+                <div class="line-horizontal"> </div>
+            </div>
+            <!-- meaning of word -->
+            <div class="meaning-container">
+                <p class="meaning-header">Meaning</p>
+                <ul class="meaning-list"> 
+                    <li>(etc.) A set of keys used to operate a typewriter, computer etc.</li>
+                    <li>A component of many instruments including the piano, organ, and harpsichord consisting of 
+                        usually black and white keys that cause different tones to be produced when struck.
+                    </li>
+                    <li>A device with keys of a musical keyboard, used to control electronic sound-producing
+                        devices which may be built into or seperate from the keyboard device.</li>
+                </ul>
+
+                <div class="synonym-wrap">
+                    <p class="synonyms">Synonyms</p>
+                    <p id="synonym"> electronic keyboard</p>
+                </div>
+                <div class="speech-container">
+                    <p id="speech-verb">verb</p>
+                    <div class="line-horizontal"> </div>
+                </div>
+
+                <p class="meaning-header">Meaning</p>
+                <ul class="meaning-list"> 
+                    <li>To type on a computer keyboard.</li>
+                    <span id="example">  "Keyboarding is the part of this job I hate the most."</span>
+                </ul>
+
+                <div class="source-wrap"> 
+                    <p class="source"> Source</p>
+                    <span class=""><a href="">https://en.wiktionary.org/wiki/keyboard</a><i class="fa-solid fa-arrow-up-right-from-square link"></i></span>
+                </div>
+                
+            </div>
+        </div>
+    
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

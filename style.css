@@ -1,0 +1,210 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@700;300;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Pacifico&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Manrope:wght@700;800&family=Pacifico&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    /* background-color: hsl(218, 23%, 16%); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+    min-height: 67vh;
+    /* font-family: 'Manrope', sans-serif; */
+    font-family: 'Lora', serif;
+  
+}
+.container{
+    padding: 30px;
+    max-width: 420px;
+}
+/* #region Header */
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.light{
+    padding-left: 3px;
+}
+.serif{
+    padding-right: 5px;
+    /* font-weight: 300; */
+    font-size: 0.85rem;
+}
+.dark{
+    display: none;
+    padding-left: 3px;
+}
+.settings-wrap{
+    width: 110px;
+    /* background-color: green; */
+    display: flex;
+    justify-content: space-between;
+}
+.settings{
+    border-left: 1px solid black;
+    padding-left: 5px;
+}
+.search{
+    width: 100%;
+    height: 2rem;
+    background-color: #F4F4F4;
+    border-radius: 12px;
+    border: 2px solid gray;
+    margin-top: 20px;
+    /* padding: 2px 5px; */
+     /* display: flex; */
+     justify-content: space-between;
+     /* align-items: right; */
+     outline: none;
+     border: none;
+}
+#search{
+    width: 90%;
+    height: 100%;
+    border-radius: 12px;
+    border: none;
+    padding: 10px;
+    outline: none;
+    
+    background-color: #F4F4F4;
+}
+.search-icon{
+    margin-left: 8px;
+    /* background-color: red; */
+    color: #A543EE;
+}
+
+
+.syllabus{
+    display: inline-block;
+   
+    }
+
+.play-wrap{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #A543EE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E9D0FA;
+    /* margin-top: -10px; */
+
+}
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.play i{
+    font-size: 18px;
+}
+.transcription{
+    color: #A543EE;
+    margin-top: 10px;
+    font-family: 'Manrope', sans-serif;
+}
+.word{
+    font-weight: 800;
+    font-size: 2.5rem;
+    padding-bottom: 3px;
+}
+/* #endregion */
+
+/* //speech/ */
+.speech-container{
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#speech-type{
+   font-size: 1.3rem;
+    min-width: 15%;
+    font-family: 'Pacifico', cursive;
+    font-weight: 300;
+}
+.line-horizontal{
+    min-width: 85%;
+    border-top: 1px solid gray;
+   
+}
+
+.meaning-container{
+    margin: 20px 0;
+}
+.meaning-header{
+    color: #A4A4A4;
+ 
+}
+.meaning-list{
+    margin: 20px 0px;
+    padding-left: 25px;
+    align-items: center;
+    /* background-color: blanchedalmond; */
+    justify-content: space-around;
+}
+.meaning-list li{
+    font-size: 0.8rem;
+    color: #5A5A5A;
+    margin: 10px 0px;
+    padding-left: 5px;
+    align-items: center;
+    
+    /* justify-content: space-around; */
+}
+#speech-verb{
+    font-weight: 300;
+    min-width: 15%;
+    font-size: 1.3rem;
+    font-family: 'Pacifico', cursive;
+}
+#synonym{
+    margin-left: 10px;
+    color: #A543EE;
+    font-weight: 300;
+    font-size: 0.9rem;
+
+}
+.synonyms{
+    color: #A4A4A4;
+    font-size: 0.9rem;
+}
+.synonym-wrap{
+    margin-top: 40px;
+    display: flex;
+    /* justify-content: space-between; */
+    width: 80%;
+}
+
+.meaning-list span{
+    padding-left: 7px;
+    color: gray;
+    font-size: 0.8rem;
+    
+}
+.source-wrap{
+    width: 90%;
+    text-align: left;
+    display: flex;
+    font-size: 0.7rem;
+    
+}
+.source{
+    margin-right: 20px;
+    font-size: 0.7rem;
+}
+#example{
+    font-size: 0.8rem;
+}
+.link{
+    color: gray;
+    margin-left: 5px ;
+    font-size: 9px;
+}
