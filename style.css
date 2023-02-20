@@ -209,3 +209,11 @@ body{
     margin-left: 5px ;
     font-size: 9px;
 }
+
+@media screen and (max-width: 1400px) {
+
+    .container{
+        padding: 30px;
+        min-width: 75%;
+    }
+}
