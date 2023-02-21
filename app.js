@@ -9,6 +9,9 @@ const definition1 = document.getElementById('meaning1');
 const definition2 = document.getElementById('meaning2');
 const definition3 = document.getElementById('meaning3');
 const synonyms = document.getElementById('synonym');
+const partOfSpeech2 = document.getElementById('speech-verb');
+const verbMeaning1 = document.getElementById('verbMeaning');
+const example = document.getElementById('example');
 
 // const adviceTitle =  document.getElementById('advice-title');
 
@@ -30,14 +33,23 @@ function displayWord(wordArray){
     definition2.innerText= `${wordArray.meanings[0].definitions[1].definition}`;
     definition3.innerText= `${wordArray.meanings[0].definitions[2].definition}`;
     const synonymsArray= wordArray.meanings[1].synonyms;
-    if (synonymsArray.length > 4){
+    if (synonymsArray.length != 0) {
+        if (synonymsArray.length > 4){
             // console.log(length.synonymsArray);const slicedArray = array.slice(0, n);
             let  newSynonyms = synonymsArray.slice(0, 3);
             synonyms.innerText= `${newSynonyms}`;
-            return;
+           // return;
         }
-    else { synonyms.innerText= `${synonymsArray}`;}
-    // console.log(wordArray.meanings[1].synonyms);
+        else { synonyms.innerText= `${synonymsArray}`;}
+    }else{
+        synonyms.innerText= `.............`;
+    }
+    
+    //Display Verb section
+    partOfSpeech2.innerText = `${wordArray.meanings[1].partOfSpeech}`;
+    verbMeaning1.innerText= `${wordArray.meanings[1].definitions[0].definition}`;
+    example.innerText = `${wordArray.meanings[1].definitions[0].example}`;
+    console.log(wordArray.meanings[1].definitions[0].example);
     // adviceTitle.firstChild.innerText = `ADVICE #${advice.id}`;
     // adviceText.firstChild.innerText = advice.advice;
     // For example, the li:nth-child(2) selects the second <li> element in a list:

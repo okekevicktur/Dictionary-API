@@ -190,7 +190,7 @@ body{
     margin-top: 40px;
     display: flex;
     /* justify-content: space-between; */
-    width: 80%;
+    width: 100%;
 }
 
 .meaning-list span{
