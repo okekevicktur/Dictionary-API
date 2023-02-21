@@ -3,8 +3,13 @@ const apiUrl= 'https://api.dictionaryapi.dev/api/v2/entries/en';
 const searchWord = document.getElementById('searchwrap');
 const searchTextbox = document.getElementById('search');
 const word = document.getElementById('word');
-
 const phonetic = document.getElementById('phonetic');
+const partOfSpeech = document.getElementById('speech-type');
+const definition1 = document.getElementById('meaning1');
+const definition2 = document.getElementById('meaning2');
+const definition3 = document.getElementById('meaning3');
+const synonyms = document.getElementById('synonym');
+
 // const adviceTitle =  document.getElementById('advice-title');
 
 
@@ -20,9 +25,26 @@ function displayWord(wordArray){
     // console.log(element.phonetic);
     word.innerText = `${wordArray.word}`;
     phonetic.innerText = `${wordArray.phonetic}`;
-        // adviceTitle.firstChild.innerText = `ADVICE #${advice.id}`;
-        // adviceText.firstChild.innerText = advice.advice;
-    
+    partOfSpeech.innerText = `${wordArray.meanings[0].partOfSpeech}`;
+    definition1.innerText= `${wordArray.meanings[0].definitions[0].definition}`;
+    definition2.innerText= `${wordArray.meanings[0].definitions[1].definition}`;
+    definition3.innerText= `${wordArray.meanings[0].definitions[2].definition}`;
+    const synonymsArray= wordArray.meanings[1].synonyms;
+    if (synonymsArray.length > 4){
+            // console.log(length.synonymsArray);const slicedArray = array.slice(0, n);
+            let  newSynonyms = synonymsArray.slice(0, 3);
+            synonyms.innerText= `${newSynonyms}`;
+            return;
+        }
+    else { synonyms.innerText= `${synonymsArray}`;}
+    // console.log(wordArray.meanings[1].synonyms);
+    // adviceTitle.firstChild.innerText = `ADVICE #${advice.id}`;
+    // adviceText.firstChild.innerText = advice.advice;
+    // For example, the li:nth-child(2) selects the second <li> element in a list:
+
+    // let listItem = document.querySelectorAll('li:nth-child(2)');
+    // To select all li elements that are directly inside a <ul> element with the class nav:
+    // let listItems = document.querySelectorAll('ul.nav > li');
 }
 //Defining async function
 async function getapi(url,wordNew){
