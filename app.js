@@ -14,19 +14,48 @@ const verbMeaning1 = document.getElementById('verbMeaning');
 const example = document.getElementById('example');
 const source = document.getElementById('sourceLink');
 const play = document.getElementById('play-wrap');
+const audio = document.getElementById('audio');
 const SecondMeaning = document.querySelector('.meaning-header');
 // const adviceTitle =  document.getElementById('advice-title');
 
+const audioSource = "";
+
+// .dark{
+//     background-color: #222;
+//     color: #e6e6e6;
+{/* <button onclick="myFunction()">Switch mode</button> 
+      
+      <script>
+          function myFunction() {
+          var element = document.body;
+          element.classList.toggle("dark");
+          }
+      </script> */}
 
 
-// play.addEventListener('click', function(){
 
 
-// })
+
+
+play.addEventListener('click', function(){
+    if (searchTextbox.value === "" && audioSource ==="") {
+        alert('Please type a word');
+   }else{
+        let newWord=  searchTextbox.value;
+        // getapi(apiUrl,newWord);
+        fetchSound();
+   }
+    
+
+})
 searchWord.addEventListener('click', function(){
-   
-    let newWord=  searchTextbox.value;
-    getapi(apiUrl,newWord);
+   if (searchTextbox.value === "") {
+        alert('Please type a word');
+   }else{
+        let newWord=  searchTextbox.value;
+        getapi(apiUrl,newWord);
+   }
+    
 })
 function checkUndefined(isUndefined){
     if (isUndefined && isUndefined.length > 0 && isUndefined !== "undefined")  {
@@ -36,6 +65,11 @@ function checkUndefined(isUndefined){
    else{
          return   '';
    }
+}
+
+function fetchSound(){
+    audio.play();
+    
 }
 
 function displayWord(wordArray){
@@ -99,7 +133,8 @@ function displayWord(wordArray){
     source.innerText = checkUndefined(`${wordArray.sourceUrls}`);
     source.href = checkUndefined(`${wordArray.sourceUrls}`);
     const audioSource= `${wordArray.phonetics[0].audio}`;
-    console.log(audioSource);
+    // console.log(audioSource);
+    document.getElementById('audio').setAttribute('src', `${audioSource}`);
     // function playSound () {
     //     let ding = new Audio('ding.mp3');
     //     ding.play();
