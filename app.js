@@ -1,5 +1,21 @@
 const apiUrl= 'https://api.dictionaryapi.dev/api/v2/entries/en';
 
+// document.onreadystatechange = function() {
+    // if (document.readyState !== "complete") {
+    //     document.querySelector(          
+    //     "body").style.visibility = "hidden";
+    //     document.querySelector("#loader")
+    //     .style.visibility = "visible";
+    // } else {
+    //     document.querySelector(
+    //     "#loader").style.display = "none";
+    //     document.querySelector(
+    //     "body").style.visibility = "visible";
+    // }
+// };
+
+
+
 const searchWord = document.getElementById('searchwrap');
 const searchTextbox = document.getElementById('search');
 const word = document.getElementById('word');
@@ -59,6 +75,8 @@ searchWord.addEventListener('click', function(){
    if (searchTextbox.value === "") {
         alert('Please type a word');
    }else{
+
+       
         let newWord=  searchTextbox.value;
         getapi(apiUrl,newWord);
    }
@@ -159,12 +177,22 @@ function displayWord(wordArray){
 //Defining async function
 async function getapi(url,wordNew){
           //storing response
+          document.querySelector("#loader")
+          .style.display = "block"; 
+        //   document.querySelector( 
+        //     "body").style.display = "none";
+            
+      
         const response = await fetch(`${url}/${wordNew}`);
         if (response.ok) {
             //storing data in form of JSon
             var data = await response.json();
             const element = data[0];
             displayWord(element);  
+            document.querySelector(
+                "#loader").style.display = "none";
+                document.querySelector(
+                "body").style.display = "flex";
         }
          else{
             alert("word not available");
