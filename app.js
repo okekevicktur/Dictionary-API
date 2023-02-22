@@ -14,40 +14,47 @@ const verbMeaning1 = document.getElementById('verbMeaning');
 const example = document.getElementById('example');
 const source = document.getElementById('sourceLink');
 const play = document.getElementById('play-wrap');
-const audio = document.getElementById('audio');
+const darkToggle = document.getElementById('dark');
+const lightToggle = document.getElementById('light');
 const SecondMeaning = document.querySelector('.meaning-header');
-// const adviceTitle =  document.getElementById('advice-title');
-
+var element = document.body;
+const audio = document.getElementById('audio');
 const audioSource = "";
 
-// .dark{
-//     background-color: #222;
-//     color: #e6e6e6;
-{/* <button onclick="myFunction()">Switch mode</button> 
-      
-      <script>
-          function myFunction() {
-          var element = document.body;
-          element.classList.toggle("dark");
-          }
-      </script> */}
+//Turn on Dark mode
+lightToggle.addEventListener('click', function(){
+    document.getElementById('dark').style.display= "inline-block";
+    document.getElementById('light').style.display= "none";
+    document.getElementById('darkMoon').style.display= "inline-block";
+    document.getElementById('lightMoon').style.display= "none";
+    
+    element.style.backgroundColor ="#222";
+    element.style.color ="#e6e6e6";
+});
 
+//Turn on light mode
+darkToggle.addEventListener('click', function(){
+    document.getElementById('light').style.display= "inline-block";
+    document.getElementById('dark').style.display= "none";
+    document.getElementById('lightMoon').style.display= "inline-block";
+    document.getElementById('darkMoon').style.display= "none";
+    
+    element.style.backgroundColor ="#FFFFFF";
+    element.style.color ="#000000";
+});
 
-
-
-
-
+//Play sound for searched word
 play.addEventListener('click', function(){
     if (searchTextbox.value === "" && audioSource ==="") {
         alert('Please type a word');
    }else{
         let newWord=  searchTextbox.value;
-        // getapi(apiUrl,newWord);
         fetchSound();
    }
     
 
 })
+//search word
 searchWord.addEventListener('click', function(){
    if (searchTextbox.value === "") {
         alert('Please type a word');
@@ -57,6 +64,8 @@ searchWord.addEventListener('click', function(){
    }
     
 })
+
+//function to control undefined objects/property
 function checkUndefined(isUndefined){
     if (isUndefined && isUndefined.length > 0 && isUndefined !== "undefined")  {
         
@@ -67,11 +76,13 @@ function checkUndefined(isUndefined){
    }
 }
 
+//Play sound function
 function fetchSound(){
     audio.play();
     
 }
 
+//display the fetched json to right element
 function displayWord(wordArray){
    
     word.innerText = `${wordArray.word}`;
