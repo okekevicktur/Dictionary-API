@@ -12,6 +12,7 @@ const synonyms = document.getElementById('synonym');
 const partOfSpeech2 = document.getElementById('speech-verb');
 const verbMeaning1 = document.getElementById('verbMeaning');
 const example = document.getElementById('example');
+const source = document.getElementById('sourceLink');
 
 // const adviceTitle =  document.getElementById('advice-title');
 
@@ -22,6 +23,11 @@ searchWord.addEventListener('click', function(){
     let newWord=  searchTextbox.value;
     getapi(apiUrl,newWord);
 })
+function checkUndefined(isUndefined){
+    if ( isUndefined === undefined){
+        return "----";
+    }
+}
 
 function displayWord(wordArray){
   
@@ -33,7 +39,7 @@ function displayWord(wordArray){
     definition2.innerText= `${wordArray.meanings[0].definitions[1].definition}`;
     definition3.innerText= `${wordArray.meanings[0].definitions[2].definition}`;
     const synonymsArray= wordArray.meanings[1].synonyms;
-    if (synonymsArray.length != 0) {
+    if (synonymsArray.length != 0)  {
         if (synonymsArray.length > 4){
             // console.log(length.synonymsArray);const slicedArray = array.slice(0, n);
             let  newSynonyms = synonymsArray.slice(0, 3);
@@ -42,15 +48,19 @@ function displayWord(wordArray){
         }
         else { synonyms.innerText= `${synonymsArray}`;}
     }else{
-        synonyms.innerText= `.............`;
+        synonyms.innerText= ``;
     }
     
     //Display Verb section
     partOfSpeech2.innerText = `${wordArray.meanings[1].partOfSpeech}`;
     verbMeaning1.innerText= `${wordArray.meanings[1].definitions[0].definition}`;
-    example.innerText = `${wordArray.meanings[1].definitions[0].example}`;
-    console.log(wordArray.meanings[1].definitions[0].example);
-    // adviceTitle.firstChild.innerText = `ADVICE #${advice.id}`;
+    example.innerText = checkUndefined(`${wordArray.meanings[1].definitions[0].example}`)
+    console.log(checkUndefined(`${wordArray.meanings[1].definitions[0].example}`));
+    source.innerText = `${wordArray.sourceUrls}`;
+    source.href = `${wordArray.sourceUrls}`;
+    
+
+    // sourceUrls// adviceTitle.firstChild.innerText = `ADVICE #${advice.id}`;
     // adviceText.firstChild.innerText = advice.advice;
     // For example, the li:nth-child(2) selects the second <li> element in a list:
 
