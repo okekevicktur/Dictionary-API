@@ -83,6 +83,18 @@ searchWord.addEventListener('click', function(){
     
 })
 
+//on enter key
+searchTextbox.addEventListener('keypress',function(e){
+
+    if(e.key === "Enter") {
+        searchWord.click();
+    }
+});
+// $("#search").keypress(function(e){
+//     if(e.keyCode === 13) {
+//         searchWord.click();
+//     }
+// });
 //function to control undefined objects/property
 function checkUndefined(isUndefined){
     if (isUndefined && isUndefined.length > 0 && isUndefined !== "undefined")  {
@@ -196,6 +208,10 @@ async function getapi(url,wordNew){
         }
          else{
             alert("word not available");
+            document.querySelector(
+                "#loader").style.display = "none";
+                document.querySelector(
+                "body").style.display = "flex";
          }
     } 
 
