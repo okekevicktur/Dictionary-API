@@ -15,7 +15,7 @@ body{
     min-height: 67vh;
     /* font-family: 'Manrope', sans-serif; */
     font-family: 'Lora', serif;
-    min-width: 300px;
+    /* min-width: 300px; */
   
 }
 .container{
@@ -160,9 +160,9 @@ body{
 }
 .word{
     font-weight: 800;
-    font-size: 250%;
+    font-size: 200%;
     padding-bottom: 3px;
-    width: 70%;
+    width: 65%;
 }
 /* #endregion */
 
@@ -243,11 +243,11 @@ body{
     width: 100%;
     text-align: left;
     display: flex;
-    font-size: 70%;
+    font-size: 65%;
     
 }
 .source{
-    margin-right: 20px;
+    margin-right: 10px;
     font-size: 0.7rem;
 }
 #example{
