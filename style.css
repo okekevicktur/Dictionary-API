@@ -15,6 +15,7 @@ body{
     min-height: 67vh;
     /* font-family: 'Manrope', sans-serif; */
     font-family: 'Lora', serif;
+    min-width: 420px;
   
 }
 .container{
@@ -120,9 +121,16 @@ body{
 
 .syllabus{
     display: inline-block;
+    width: 100%;
    
     }
-
+.playwrap-container{
+    width: 25%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
 .play-wrap{
     width: 50px;
     height: 50px;
@@ -143,7 +151,7 @@ body{
     margin-top: 20px;
 }
 .play i{
-    font-size: 18px;
+    font-size: 150%;
 }
 .transcription{
     color: #A543EE;
@@ -152,8 +160,9 @@ body{
 }
 .word{
     font-weight: 800;
-    font-size: 2.5rem;
+    font-size: 250%;
     padding-bottom: 3px;
+    width: 70%;
 }
 /* #endregion */
 
@@ -234,7 +243,7 @@ body{
     width: 100%;
     text-align: left;
     display: flex;
-    font-size: 0.7rem;
+    font-size: 70%;
     
 }
 .source{
