@@ -194,24 +194,33 @@ async function getapi(url,wordNew){
         //   document.querySelector( 
         //     "body").style.display = "none";
             
-      
-        const response = await fetch(`${url}/${wordNew}`);
-        if (response.ok) {
-            //storing data in form of JSon
-            var data = await response.json();
-            const element = data[0];
-            displayWord(element);  
+        try {
+            const response = await fetch(`${url}/${wordNew}`);
+            if (response.ok) {
+                //storing data in form of JSon
+                var data = await response.json();
+                const element = data[0];
+                displayWord(element);  
+                document.querySelector(
+                    "#loader").style.display = "none";
+                    document.querySelector(
+                    "body").style.display = "flex";
+            }
+             else{
+                alert("word not available");
+                document.querySelector(
+                    "#loader").style.display = "none";
+                    document.querySelector(
+                    "body").style.display = "flex";
+             }
+        
+        } catch (error) {
+            alert("Opps... it's hard getting the meaning");
             document.querySelector(
                 "#loader").style.display = "none";
                 document.querySelector(
                 "body").style.display = "flex";
         }
-         else{
-            alert("word not available");
-            document.querySelector(
-                "#loader").style.display = "none";
-                document.querySelector(
-                "body").style.display = "flex";
-         }
+       
     } 
 
