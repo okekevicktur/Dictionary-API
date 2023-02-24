@@ -219,6 +219,8 @@ body{
     color: #A543EE;
     font-weight: 300;
     font-size: 0.9rem;
+    width: 70%;
+    word-wrap: break-word;
 
 }
 .synonyms{
