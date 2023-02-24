@@ -63,7 +63,9 @@ body{
     display: none;
     padding-left: 3px;
 }
-
+#light, #dark{
+    cursor: pointer;
+}
 
 .settings-wrap{
     width: 110px;
@@ -131,6 +133,7 @@ body{
     align-items: center;
     background-color: #E9D0FA;
     /* margin-top: -10px; */
+    cursor: pointer;
 
 }
 .main-header{
